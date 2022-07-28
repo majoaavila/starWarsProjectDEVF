@@ -4,14 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="css/style.css"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <title>Star Wars</title>
 </head>
 <body>
-    <h1>Personajes de Star Wars</h1>
-    <br>
-    <div id="app">
-        <script src="js/script.js"></script>
+    <div class="headerContainer">
+        <nav id="navHeader">
+            <div id="logo">
+                <img src="https://cdn.goodvinilos.com/61003/vinilo-logo-star-wars.jpg">
+            </div>
+        </nav>
+    </div>   
+    <div class="formContainer">
+        <h2>¡Busca a tu personaje favorito!</h2>
+        <form action="#">
+            <input type="text" name="searchInput" id="searchInput" placeholder="Busca un personaje" onkeyup="search()">
+            <input type="button" id="searchButton" onclick="search()" value="Buscar">
+            <input type="button" id="refreshButton" onclick="refreshData()" value="Reiniciar">
+            <select name="sort" id="sort" onchange="toOrderCharacters()">
+                <option value="">Filtrar</option>
+                <option value="none">Sin ordenar</option>
+                <option value="ascending">Orden ascendente</option>
+                <option value="descending">Orden descendente</option>
+            </select>
+        </form>
     </div>
+    <div class="row" id="appContainer" >
+    <div class="app">
+        <script src="js/main.js"></script>
+    </div>
+</div>
 </body>
 </html>
